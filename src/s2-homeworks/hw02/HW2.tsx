@@ -35,7 +35,7 @@ const defaultAffairs: AffairType[] = [ // need to fix any
 ]
 
 // pure helper functions
-export const filterAffairs = (affairs: AffairType[], filter: FilterType): any => { // need to fix any
+export const filterAffairs = (affairs: AffairType[], filter: FilterType): any => { // need to fix any // что тут типизируем TODO
 
 
     return affairs // need to fix
