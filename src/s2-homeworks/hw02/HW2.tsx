@@ -5,11 +5,11 @@ import s2 from '../../s1-main/App.module.css'
 /*
 * 1 - описать типы AffairPriorityType, AffairType +
 * 2 - указать нужный тип для defaultAffairs +
-* 3 - дописать типы и логику функции filterAffairs и проверить её тестами
-* 4 - выполнить пункт 3 для функции deleteAffair
-* 5 - указать нужный тип в useState с affairs
-* 6 - дописать тип и логику функции deleteAffairCallback
-* 7 - в файле Affairs.tsx дописать типизацию пропсов
+* 3 - дописать типы и логику функции filterAffairs и проверить её тестами +
+* 4 - выполнить пункт 3 для функции deleteAffair +
+* 5 - указать нужный тип в useState с affairs +
+* 6 - дописать тип и логику функции deleteAffairCallback +
+* 7 - в файле Affairs.tsx дописать типизацию пропсов+
 * 8 - в файле Affairs.tsx дописать логику функций setAll, setHigh, setMiddle, setLow
 * 9 - в файле Affair.tsx дописать типизацию пропсов
 * 10 - в файле Affair.tsx дописать функции deleteCallback и использовать
@@ -35,23 +35,34 @@ const defaultAffairs: AffairType[] = [ // need to fix any
 ]
 
 // pure helper functions
-export const filterAffairs = (affairs: AffairType[], filter: FilterType): any => { // need to fix any // что тут типизируем TODO
-
-
+export const filterAffairs = (affairs: AffairType[], filter: FilterType): AffairType[] => { // need to fix any // типизируем то что возвращаем что тут типизируем ??? Куда эти функции передаём? TODO
+    if (filter === 'low'){
+        affairs = affairs.filter( a => a.priority === 'low')
+    }
+    if (filter === 'middle'){
+        affairs = affairs.filter( a => a.priority === 'middle')
+    }
+    if (filter === 'high'){
+        affairs = affairs.filter( a => a.priority === 'high')
+    }
     return affairs // need to fix
 }
-export const deleteAffair = (affairs: any, _id: any): any => { // need to fix any
-
+export const deleteAffair = (affairs: AffairType[], _id: number): AffairType[] => { // need to fix any передаём ниже в обёртку которая
+    affairs = affairs.filter((a)=>{
+        return a._id !== _id;
+    })
     return affairs // need to fix
 }
 
 function HW2() {
-    const [affairs, setAffairs] = useState<any>(defaultAffairs) // need to fix any
+    const [affairs, setAffairs] = useState<AffairType[]>(defaultAffairs) //  почему не используем SetAffairs
     const [filter, setFilter] = useState<FilterType>('all')
 
     const filteredAffairs = filterAffairs(affairs, filter)
-    const deleteAffairCallback = (_id: any) => { // need to fix any
+    const deleteAffairCallback = (_id: number) => { // need to fix any
         // need to fix
+        setAffairs(deleteAffair(affairs, _id)) // оборачиваем кэлл бэк с 2 параметрами в одну функцию
+
     }
 
     return (
