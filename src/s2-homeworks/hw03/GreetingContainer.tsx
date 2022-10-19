@@ -8,9 +8,10 @@ type GreetingContainerPropsType = {
 }
 
 export const pureAddUser = (name: string, setError: (error:string)=>void, setName: (name:string)=>void, addUserCallback: (name: string)=>void) => {
-    if (name === ''){
-        setError('Ошибка!!! Введите имя!')
+    if (name.trim() === ''){
+        setError('Ошибка! Введите имя!')
     } else {
+
         addUserCallback(name)
         setName('')
     }
@@ -18,9 +19,9 @@ export const pureAddUser = (name: string, setError: (error:string)=>void, setNam
 }
 
 export const pureOnBlur = (name: string, setError: (error:string)=>void) => { // если имя пустое - показать ошибку
-    if (name === ''){
-        setError('Ошибка!!! Введите имя!')
-    }
+    if (name.trim() === ''){
+        setError('Ошибка! Введите имя!')
+    } // TODO проверку на пустую строку или строку с пробелами
 }
 
 export const pureOnEnter = (e: KeyboardEvent<HTMLInputElement>, addUser: ()=>void) => { // если нажата кнопка Enter - добавить
@@ -56,12 +57,13 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
         pureOnBlur(name, setError)
     }
 
-    const onEnter = (e: any) => {
+    const onEnter = (e: KeyboardEvent<HTMLInputElement>) => {
+        console.log(e.key)
         pureOnEnter(e, addUser)
     }
 
     const totalUsers = users.length // need to fix
-    const lastUserName = users[users.length-1] // need to fix
+    const lastUserName = name // need to fix TODO находить последний элемент массива
 
     return (
         <Greeting
