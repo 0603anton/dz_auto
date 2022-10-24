@@ -21,7 +21,7 @@ export const pureAddUser = (name: string, setError: (error:string)=>void, setNam
 export const pureOnBlur = (name: string, setError: (error:string)=>void) => { // если имя пустое - показать ошибку
     if (name.trim() === ''){
         setError('Ошибка! Введите имя!')
-    } // TODO проверку на пустую строку или строку с пробелами
+    }
 }
 
 export const pureOnEnter = (e: KeyboardEvent<HTMLInputElement>, addUser: ()=>void) => { // если нажата кнопка Enter - добавить
@@ -46,7 +46,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
 
     const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any
         setName(e.currentTarget.value) // need to fix
-        setError('')       //TODO что делать с этим булевым значением error && setError('')
+        error && setError('')       //TODO что делать с этим булевым значением error && setError('')
     }
 
     const addUser = () => {
@@ -63,7 +63,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     }
 
     const totalUsers = users.length // need to fix
-    const lastUserName = name // need to fix TODO находить последний элемент массива
+    const lastUserName = users.length > 0 ? users[users.length -1].name: undefined // need to fix TODO находить последний элемент массива
 
     return (
         <Greeting
