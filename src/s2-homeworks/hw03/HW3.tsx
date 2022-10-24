@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { v1 } from 'uuid'
+import React, {useState} from 'react'
+import {v1} from 'uuid'
 import s2 from '../../s1-main/App.module.css'
 import GreetingContainer from './GreetingContainer'
 
@@ -23,9 +23,9 @@ export type UserType = {
     name: string // need to fix any
 }
 
-export const pureAddUserCallback = (name: string, setUsers: (users:UserType[])=>void, users: UserType[]) => { // need to fix any
+export const pureAddUserCallback = (name: string, setUsers: (users: UserType[]) => void, users: UserType[]) => { // need to fix any
     const user = { // need to fix
-        _id:v1(),
+        _id: v1(),
         name
     }
     setUsers([...users, user])
@@ -42,7 +42,7 @@ const HW3 = () => {
         <div id={'hw3'}>
             <div className={s2.hwTitle}>Homework #3</div>
             {/*для автоматической проверки дз (не менять)*/}
-
+            <hr/>
             <div className={s2.hw}>
                 <GreetingContainer
                     users={users}
