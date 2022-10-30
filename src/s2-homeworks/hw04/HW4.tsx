@@ -1,6 +1,7 @@
 import React from 'react'
 import s2 from '../../s1-main/App.module.css'
 import Stand from './Stand'
+import {hrHR} from "@mui/material/locale";
 
 /*
 * 1 - понять (и простить) SuperInputText
@@ -13,6 +14,7 @@ const HW4 = () => {
     return (
         <div id={'hw4'}>
             <div className={s2.hwTitle}>Homework #4</div>
+            <hr/>
             {/*демонстрация возможностей компонент:*/}
             <div className={s2.hw}>
                 <Stand />
