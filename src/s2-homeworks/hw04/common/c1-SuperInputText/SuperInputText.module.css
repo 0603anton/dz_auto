@@ -8,13 +8,28 @@
 }
 
 .superInput {
+    height: 36px;
+    width: 372px;
+    border-radius: 5px;
+    border: 1px solid #D1D1D1
 }
 
 .errorInput {
+    height: 36px;
+    width: 372px;
+    border-radius: 5px;
+    border: 3px solid red;
 }
 
 .errorInput:focus {
+    outline: none;
+    height: 36px;
+    width: 372px;
+    border-radius: 5px;
+    border: 3px solid red;
+
 }
 
 .error {
+    color: red;
 }
