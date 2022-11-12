@@ -13,7 +13,7 @@ type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElem
 
 // здесь мы говорим что у нашего инпута будут такие же пропсы как у обычного инпута, кроме type
 // (чтоб не писать value: string, onChange: ...; они уже все описаны в DefaultInputPropsType)
-type SuperInputTextPropsType = Omit<DefaultInputPropsType, 'type'> & {
+type SuperInputTextPropsType = Omit<DefaultInputPropsType, 'type'> & { // TODO запомни omit  Это новый тип, в котором можно указать свойства, которые будут исключены из исходного типа.
     // и + ещё пропсы которых нет в стандартном инпуте
     onChangeText?: (value: string) => void
     onEnter?: () => void
@@ -52,7 +52,7 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
         + (spanClassName ? ' ' + spanClassName : '')
     const finalInputClassName = s.input
         + (error ? ' ' + s.errorInput : ' ' + s.superInput)
-        + (className ? ' ' + s.className : '') // задача на смешивание классов
+        + (className ? ' ' + s.className : '') // задача на смешивание классов TODO что за класснэйм
 
     return (
         <div className={s.inputWrapper}>
