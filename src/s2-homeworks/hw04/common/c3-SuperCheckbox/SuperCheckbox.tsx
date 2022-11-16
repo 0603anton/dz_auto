@@ -29,11 +29,12 @@ const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
 
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
         // задачка на написание онченджа
-        onChange && onChange(e) // изначально сделал без этой строки работал только верхний инпут, почему TODO
+        onChange?.(e) // тут более современный синтаксис того, что написано ниже
+        // onChange && onChange(e) // изначально сделал без этой строки работал только верхний инпут, почему TODO
         onChangeChecked?.(e.currentTarget.checked) // до чего сам догадался и написал, но более простой логикой см строку ниже
         // if (onChangeChecked) {
         //     onChangeChecked(e.currentTarget.checked)
-        //} по аналогии видео димыча соц сети, компонент myposts задать вопрос про реф и почему там так же
+        //}
 
     }
 

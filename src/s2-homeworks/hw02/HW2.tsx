@@ -35,7 +35,7 @@ const defaultAffairs: AffairType[] = [ // need to fix any
 ]
 
 // pure helper functions
-export const filterAffairs = (affairs: AffairType[], filter: FilterType): AffairType[] => { // need to fix any // типизируем то что возвращаем что тут типизируем ??? Куда эти функции передаём? TODO
+export const filterAffairs = (affairs: AffairType[], filter: FilterType): AffairType[] => { // need to fix any // типизируем то что возвращаем  Куда эти функции передаём? TODO
     if (filter === 'low'){
         affairs = affairs.filter( a => a.priority === 'low')
     }

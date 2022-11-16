@@ -29,6 +29,7 @@
     width: 372px;
     left: 0px;
     top: 0px;
+    outline: none;
 }
 
 .errorInput {
@@ -38,7 +39,7 @@
     width: 372px;
     left: 0px;
     top: 0px;
-
+    outline: none;
 }
 
 .button {

@@ -28,6 +28,7 @@ const Stand = () => {
                         value={stateForAllInputs}
                         onChangeText={setValue}
                         error={error}
+                        // className={`redd`}
                         onEnter={() => {
                             setError(
                                 stateForAllInputs.trim()
@@ -80,7 +81,7 @@ const Stand = () => {
                     <SuperCheckbox
                         id={'hw4-super-checkbox-with-text'}
                         checked={stateForAllCheckboxes}
-                        onChangeChecked={setChecked}
+                        onChangeChecked={setChecked} // здесь у нас кастомный пропс
                     >
                         some text
                     </SuperCheckbox>
