@@ -19,6 +19,7 @@ code {
     monospace;
 }
 
-#hw1, #hw2, #hw3, #hw4, #hw5, #hw6{
+#hw1, #hw2, #hw3, #hw4, #hw5, #hw6, #hw7{
     margin: 15px 70px;
+    height: 350px;
 }
