@@ -19,7 +19,7 @@ border-bottom: 1px solid #E5E5E5;
 
 .buttonsContainer {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     gap:15px;
     margin-bottom: 15px;
 }

@@ -1,8 +1,9 @@
 .stand {
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     align-items: center;
     padding: 70px;
+    gap: 30px;
 }
 
 .inputs {
